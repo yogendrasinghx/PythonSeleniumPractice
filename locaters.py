@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
 from webdriver_manager.chrome import ChromeDriverManager
 
 service = Service(ChromeDriverManager().install())
@@ -15,5 +16,13 @@ driver.find_element(By.CSS_SELECTOR, "#inlineRadio1").click()
 driver.find_element(By.XPATH, "//input[@type='submit']").click()
 message = driver.find_element(By.XPATH, "//div[@class='alert alert-success alert-dismissible']").text
 driver.find_element(By.CSS_SELECTOR, ".ng-untouched.ng-pristine.ng-valid").clear()
+
+# Select Static dropdown
+dropdown = Select(driver.find_element(By.CSS_SELECTOR, "#exampleFormControlSelect1"))
+dropdown.select_by_visible_text('Female')
+dropdown.select_by_value('male')
+dropdown.select_by_index(0)
+
 print(message)
 assert "Success!" in message
+input()

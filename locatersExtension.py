@@ -13,4 +13,3 @@ driver.find_element(By.XPATH, "//form/div[1]/input").send_keys("demo@gmail.com")
 driver.find_element(By.CSS_SELECTOR, "form div:nth-child(2) input").send_keys("Hello@1234")
 driver.find_element(By.CSS_SELECTOR, "input[placeholder='Confirm Passsword']").send_keys("Hello@1234")
 driver.find_element(By.XPATH, "//button[text()='Save New Password']").click()
-
