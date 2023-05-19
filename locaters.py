@@ -1,9 +1,9 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
-service = ChromeService(ChromeDriverManager().install())
+service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
 
 driver.get("https://rahulshettyacademy.com/angularpractice/")
@@ -17,4 +17,3 @@ message = driver.find_element(By.XPATH, "//div[@class='alert alert-success alert
 driver.find_element(By.CSS_SELECTOR, ".ng-untouched.ng-pristine.ng-valid").clear()
 print(message)
 assert "Success!" in message
-input()
