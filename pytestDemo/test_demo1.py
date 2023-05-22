@@ -1,6 +1,11 @@
+import pytest
+
+
+@pytest.mark.smoke
 def test_first_program():
     print("Hello")
 
 
-def test_gretting():
+@pytest.mark.skip
+def test_grettingCreditCard():
     print("Good Morning")
